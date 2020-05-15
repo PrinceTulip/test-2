@@ -9,9 +9,9 @@ body {
   font-family: $bienet;
   font-size: 16px;
   line-height: 1.125;
-  color: $black;
   background-color: wheat;
   box-sizing: border-box;
+  color: rgba( $black, 0.7);
 }
 
 ul,ol {
