@@ -1,0 +1,53 @@
+.row-header-news {
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 15px 0;
+
+  @include laptop {
+    flex-direction: column;
+  }
+}
+
+.header-news {
+  margin-top: 50px;
+  border-top: 2px solid $black;
+  border-bottom: 2px solid $black;
+}
+
+.header-news__block {
+  width: 15%;
+  text-align: center;
+
+  @include laptop {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.header-news__title {
+
+  @include laptop {
+    display: block;
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+
+.header-news__title-h2 {
+  font-size: 90px;
+  font-family: $dkCourant;
+  text-align: center;
+
+  @media (max-width: 1209px) {
+    font-size: 73px;
+  }
+
+  @include laptop {
+    font-size: 60px;
+  }
+
+  @include phones {
+    font-size: 50px;
+  }
+
+}
