@@ -2,11 +2,6 @@
 
 const gulp = require('gulp');
 
-const svgSprite = require('gulp-svg-sprite'),
-      svgmin = require('gulp-svgmin'),
-      cheerio = require('gulp-cheerio'),
-      replace = require('gulp-replace');
-
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const cleanCSS = require('gulp-cleancss');
@@ -38,33 +33,6 @@ const config = {
 const paths =  {
   src: './src/',              // paths.src
   build: './build/'           // paths.build
-};
-
-
-function svgSpriteBuild() {
-  return gulp.src(paths.src + 'icons/*.svg')
-  // минифицируем svg
-    .pipe(svgmin({
-      js2svg: {
-        pretty: true
-      }
-    }))
-    // удалить все атрибуты fill, style and stroke в фигурах
-    .pipe(cheerio({
-      run: function($) {
-        $('[fill]').removeAttr('fill');
-        $('[stroke]').removeAttr('stroke');
-        $('[style]').removeAttr('style');
-      },
-      parserOptions: {
-        xmlMode: true
-      }
-    }))
-    // cheerio плагин заменит, если появилась, скобка '&gt;', на нормальную.
-    .pipe(replace('&gt;', '>'))
-    // build svg sprite
-    .pipe(svgSprite(config))
-    .pipe(gulp.dest(paths.build + 'icons'));
 };
 
 function styles() {
@@ -108,10 +76,10 @@ function htmls() {
 
 function img() {
   return gulp.src(paths.src + 'img/*')
-      .pipe(imagemin([
-        imagemin.mozjpeg({quality: 78, progressive: true}),
-        imagemin.optipng({optimizationLevel: 5}),
-       ]))
+      //.pipe(imagemin([
+        //imagemin.mozjpeg({quality: 78, progressive: true}),
+       // imagemin.optipng({optimizationLevel: 5}),
+       //]))
       .pipe(gulp.dest(paths.build + 'img'));
 }
 
@@ -156,7 +124,6 @@ exports.watch = watch;
 exports.img = img;
 exports.favicon = favicon;
 exports.fonts = fonts;
-exports.svgSpriteBuild = svgSpriteBuild;
 exports.spritesPng = spritesPng;
 
 
@@ -175,6 +142,6 @@ gulp.task('build', gulp.series(
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, htmls, img, svgSpriteBuild, fonts, favicon, spritesPng),
+    gulp.parallel(styles, scripts, htmls, img, fonts, favicon, spritesPng),
     gulp.parallel(watch, serve)
 ));
