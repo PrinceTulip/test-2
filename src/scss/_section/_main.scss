@@ -1,0 +1,23 @@
+.main {
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+
+.row-main {
+  justify-content: center;
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.main-left, .main-right {
+  width: 50%;
+
+  @media (max-width: 1040px) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+

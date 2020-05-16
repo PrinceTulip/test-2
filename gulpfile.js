@@ -19,16 +19,7 @@ const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
-const spritesmith = require('gulp.spritesmith');
 const imagemin = require('gulp-imagemin');
-
-const config = {
-  mode: {
-    symbol: {
-      sprite: "sprite.svg",
-    }
-  }
-};
 
 const paths =  {
   src: './src/',              // paths.src
@@ -59,15 +50,6 @@ return(
 )
 }
 
-function spritesPng() {
-  const spriteData = gulp.src(paths.src + 'img/iconsSprite/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css',
-    padding: 25
-  }));
-  return spriteData.pipe(gulp.dest(paths.build + 'icons'));
-}
-
 function htmls() {
   return gulp.src(paths.src + '*.html')
       .pipe(plumber())
@@ -76,16 +58,11 @@ function htmls() {
 
 function img() {
   return gulp.src(paths.src + 'img/*')
-      //.pipe(imagemin([
-        //imagemin.mozjpeg({quality: 78, progressive: true}),
-       // imagemin.optipng({optimizationLevel: 5}),
-       //]))
+      .pipe(imagemin([
+        imagemin.mozjpeg({quality: 78, progressive: true}),
+        imagemin.optipng({optimizationLevel: 5}),
+       ]))
       .pipe(gulp.dest(paths.build + 'img'));
-}
-
-function favicon() {
-  return gulp.src(paths.src + 'favicon/*')
-      .pipe(gulp.dest(paths.build + 'favicon'));
 }
 
 function fonts() {
@@ -102,9 +79,6 @@ function watch() {
   gulp.watch(paths.src + 'js/*.js', scripts);
   gulp.watch(paths.src + '*.html', htmls);
   gulp.watch(paths.src + 'img/*', img);
-  gulp.watch(paths.src + 'favicon/*', favicon);
-  gulp.watch(paths.src + 'img/iconsSprite/*', spritesPng);
-
 }
 
 function serve() {
@@ -122,9 +96,7 @@ exports.htmls = htmls;
 exports.clean = clean;
 exports.watch = watch;
 exports.img = img;
-exports.favicon = favicon;
 exports.fonts = fonts;
-exports.spritesPng = spritesPng;
 
 
 
@@ -135,13 +107,11 @@ gulp.task('build', gulp.series(
     htmls,
     img,
     fonts,
-    favicon,
-    spritesPng
-    // gulp.parallel(styles, scripts, htmls, img, fonts)
+    gulp.parallel(styles, scripts, htmls, img, fonts)
 ));
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, htmls, img, fonts, favicon, spritesPng),
+    gulp.parallel(styles, scripts, htmls, img, fonts),
     gulp.parallel(watch, serve)
 ));
