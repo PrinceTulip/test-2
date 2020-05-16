@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Hand-Shop';
   src: url('../fonts/Hand-Shop/HandShopTypographyC30_demo.woff2') format('woff2'),
-  url('../fonts/Hand-Shop/Bienetresocial/HandShopTypographyC30_demo.woff') format('woff');
+  url('../fonts/Hand-Shop/HandShopTypographyC30_demo.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,14 +34,6 @@
   font-family: 'DK-Courant';
   src: url('../fonts/Dk-Courant/DKCourant.woff2') format('woff2'),
   url('../fonts/Dk-Courant/DKCourant.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Carolyna-Words';
-  src: url('../fonts/Carolyna-Words/CarolynaWords.woff2') format('woff2'),
-  url('../fonts/Carolyna-Words/CarolynaWords.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -94,19 +86,4 @@
   font-style: italic;
 }
 
-@font-face {
-  font-family: 'UglyQua-Italic';
-  src: url('../fonts/UqlyQua/UglyQua-Italic.woff2') format('woff2'),
-  url('../fonts/UqlyQua/UglyQua-Italic.woff') format('woff');
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'UglyQua';
-  src: url('../fonts/UqlyQua/UglyQua.woff2') format('woff2'),
-  url('../fonts/UqlyQua/UglyQua.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
 

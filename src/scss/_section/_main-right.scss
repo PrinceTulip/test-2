@@ -1,0 +1,177 @@
+.main-right__meet {
+  margin-right: 50px;
+
+  @include phones {
+    margin-right: 0;
+  }
+}
+
+.main-right__meet-title {
+  font-size: 35px;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid $black;
+
+  @media (max-width: 1296px) {
+    font-size: 25px
+  }
+}
+
+.main-right__meet-subtitle {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $black;
+  font-family: $oldNews;
+}
+
+.main-right__meet-desc {
+  text-align: justify;
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.main-right__important {
+  margin-top: 20px;
+}
+
+.main-right__important-title {
+  font-size: 30px;
+  padding: 10px 0;
+  background-color: rgba(0,0,0, 0.7);
+  font-family: $handShop;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: $wheat;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-right__important-desc {
+  text-align: justify;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.main-right__number-title {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-family: $handShop;
+  font-weight: 400;
+  text-align: center;
+
+  @media (max-width: 1389px) {
+    font-size: 24px;
+  }
+}
+
+.main-right__number-subtitle {
+  font-size: 36px;
+  margin-bottom: 10px;
+
+  @media (max-width: 1383px) {
+    font-size: 24px;
+    text-align: center;
+
+  }
+}
+
+.main-right__number-data {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.main-right__info-title {
+  font-size: 50px;
+  font-family: $handShop;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  border-bottom: 2px solid $black;
+  text-align: center;
+}
+
+.main-right__info-subtitle {
+  padding: 10px 0 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid $black;
+  font-size: 20px;
+  text-align: center;
+  font-family: $oldNews;
+}
+
+.main-right__info {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.main-right__info-img {
+
+  @include phones {
+    order: 1;
+  }
+
+
+  border-bottom: 4px solid #000;
+  padding-bottom: 10px;
+
+}
+
+.main-right__info-desc {
+  text-align: justify;
+}
+
+.main-right__oldpaper {
+  margin-top: 10px;
+
+  @include phones {
+    order: 2;
+  }
+
+}
+
+.main-right__oldpaper-title {
+  font-size: 50px;
+  font-family: $handShop;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid $black;
+}
+
+.main-right__oldpaper-subtitle {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+
+  @media (max-width: 1263px) {
+    font-size: 21px
+  }
+}
+
+.main-right__oldpaper-desc {
+  text-align: justify;
+}
+
+.main-right {
+  @media (max-width: 1050px) {
+    margin-top: 50px;
+  }
+}
+
+.row-right {
+  @include phones {
+    flex-direction: column;
+  }
+}

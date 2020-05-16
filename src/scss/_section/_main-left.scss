@@ -1,0 +1,174 @@
+.main-left {
+  margin-right: 50px;
+}
+
+.main-left__news-title {
+  font-size: 77px;
+  font-family: $handShop;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+
+  @media (max-width: 1407px) {
+    font-size: 58px
+  }
+
+  @media (max-width: 571px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 424px) {
+    font-size: 27px;
+  }
+}
+
+.main-left__news-img {
+  margin-right: 20px;
+
+  @media (max-width: 1400px) {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+
+.main-left__desc-title {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+  @media (max-width: 1314px) {
+    font-size: 23px
+  }
+}
+
+.main-left__news-desc {
+  width: 200px;
+
+
+  @media (max-width: 1400px) {
+    width: 100%;
+  }
+}
+
+.row-desc {
+  margin-bottom: 20px;
+}
+
+.main-left__large-desc {
+  p {
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+}
+
+.main-left__news {
+  border-bottom: 4px solid $black;
+
+  @media (max-width: 1400px) {
+    text-align: center;
+  }
+}
+
+.main-left__news-text {
+  text-align: justify;
+}
+
+.main-left__extra {
+  border-top: 2px solid rgba($black, 0.7);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.main-left__extra-title {
+  font-size: 53px;
+  font-family: $handShop;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @media (max-width: 1398px) {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.main-left__extra-subtitle {
+  font-size: 35px;
+  margin-bottom: 20px;
+
+  @media (max-width: 1407px) {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  @media (max-width: 331px) {
+    font-size: 23px;
+  }
+
+}
+
+.main-left__extra-text {
+  max-width: 645px;
+  margin-right: 20px;
+  text-align: justify;
+
+  @media (max-width: 1400px) {
+    margin-right: 0;
+    max-width: 100%;
+  }
+
+  p {
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+}
+
+.main-left__extra-large {
+  text-align: justify;
+}
+
+.main-left__welcome-text {
+  text-align: justify;
+  max-width: 200px;
+
+  @media (max-width: 1400px) {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+.main-left__welcome-title {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.main-left__welcome-img {
+  margin-right: 20px;
+
+  @media (max-width: 1400px) {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+
+.row-desc {
+  @media (max-width: 1400px) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.row-welcome {
+  @media (max-width: 1400px) {
+    display: block;
+    text-align: center;
+  }
+
+}
+
+
