@@ -20,6 +20,15 @@ window.addEventListener('DOMContentLoaded', () => {
     galleryPrev.addEventListener('click', onPrevImg);
     galleryNext.addEventListener('click', onNextImg);
 
+    window.addEventListener('resize', debounce(function () {
+      console.log(document.documentElement.clientWidth);
+      // Обработать событие resize (как Вам вздумается)
+      if (document.documentElement.clientWidth <= 490) {
+        overlay.style.height = document.body.scrollHeight
+        console.log(scrollHeight)
+      }
+    }, 300));
+
     function onCloseClick(e) {
       e.preventDefault();
       overlay.classList.remove('overlay--show');
@@ -40,7 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const target = e.target;
       galleryIndex = +target.dataset.gallery_index;
-
       showGallery(galleryIndex);
     }
 
@@ -52,9 +60,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
         galleryIndex = +target.dataset.gallery_index;
         overlay.classList.add('overlay--show');
-
         showGallery(galleryIndex);
       }
+    }
+    //
+    function debounce(func, wait, immediate) {
+      let timeout;
+
+      return function() {
+        let context = this, args = arguments;
+        let later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+
+        let callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
     }
 
     function hideGallery() {

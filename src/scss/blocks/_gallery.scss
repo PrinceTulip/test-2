@@ -4,6 +4,12 @@
   transform: translateX(-50%);
   top: 13%;
   left: 50%;
+
+  @media (max-width: 630px) {
+    width: 100%;
+    padding: 0 10px;
+    top: 3%;
+  }
 }
 
 .gallery__control-btn {
@@ -14,6 +20,10 @@
   border-style: solid;
   border-width: 25px 30px 22px 0;
   cursor: pointer;
+
+  @media (max-width: 733px) {
+    top: 102%;
+  }
 }
 
 .gallery__prev {
@@ -28,6 +38,9 @@
   background: transparent;
   border-color: $white;
 
+  @media (max-width: 733px) {
+    left: 30%;
+  }
 }
 
 .gallery__next {
@@ -41,6 +54,10 @@
   border-bottom: 0;
   background: transparent;
   border-color: $white;
+
+  @media (max-width: 733px) {
+    right: 30%;
+  }
 }
 
 .gallery__img-big {
@@ -64,6 +81,11 @@
   height: 100px;
   border: 3px solid transparent;
   cursor: pointer;
+
+  @include phones {
+    width: 43%;
+  }
+
   &:last-child {
     margin-right: 0;
   }
@@ -86,7 +108,7 @@
   &:after {
     position: absolute;
     content: '';
-    width: 20px;
+    width: 30px;
     height: 2px;
     top: -20px;
     right: 0;
@@ -97,7 +119,7 @@
   &:before {
     position: absolute;
     content: '';
-    width: 20px;
+    width: 30px;
     height: 2px;
     top: -20px;
     right: 0;

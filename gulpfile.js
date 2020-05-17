@@ -21,7 +21,7 @@ const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
 const imagemin = require('gulp-imagemin');
 
-const paths =  {
+const paths = {
   src: './src/',              // paths.src
   build: './build/'           // paths.build
 };
@@ -33,21 +33,22 @@ function styles() {
       .pipe(sass()) // { outputStyle: 'compressed' }
       .pipe(autoprefixer())
       .pipe(cleanCSS())
-      .pipe(rename({ suffix: ".min" }))
+      .pipe(rename({suffix: ".min"}))
       .pipe(gulp.dest(paths.build + 'css/'))
 }
+
 function scripts() {
-return(
-  browserify(paths.src + 'js/main.js')
-    .transform("babelify", {presets: ["@babel/preset-env"]})
-    .bundle()
-    .pipe(source("bundle.js"))
-    // Turn it into a buffer!
-    .pipe(buffer())
-    // And uglify
-    .pipe(uglify())
-  .pipe(gulp.dest(paths.build + 'js/'))
-)
+  return (
+      browserify(paths.src + 'js/main.js')
+          .transform("babelify", {presets: ["@babel/preset-env"]})
+          .bundle()
+          .pipe(source("bundle.js"))
+          // Turn it into a buffer!
+          .pipe(buffer())
+          // And uglify
+          .pipe(uglify())
+          .pipe(gulp.dest(paths.build + 'js/'))
+  )
 }
 
 function htmls() {
@@ -58,10 +59,10 @@ function htmls() {
 
 function img() {
   return gulp.src(paths.src + 'img/*')
-      .pipe(imagemin([
-        imagemin.mozjpeg({quality: 78, progressive: true}),
-        imagemin.optipng({optimizationLevel: 5}),
-       ]))
+      //.pipe(imagemin([
+      //imagemin.mozjpeg({quality: 78, progressive: true}),
+      // imagemin.optipng({optimizationLevel: 5}),
+      // ]))
       .pipe(gulp.dest(paths.build + 'img'));
 }
 
@@ -97,8 +98,6 @@ exports.clean = clean;
 exports.watch = watch;
 exports.img = img;
 exports.fonts = fonts;
-
-
 
 gulp.task('build', gulp.series(
     clean,
