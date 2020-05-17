@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (callNow) func.apply(context, args);
       };
     }
-    //
+
     function hideGallery() {
       gallerySmallImgs.forEach((item) => {
         item.classList.remove('gallery__img--active');
